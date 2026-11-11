@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery album | Honey Star Resources Limited</title>
+  <meta name="description" content="Pictures from the Honey Star Resources Limited gallery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/Gotham-Bold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html#top" aria-label="Honey Star Resources home">
+        <picture>
+          <source srcset="assets/logo-white.png" media="(prefers-color-scheme: dark)">
+          <img src="assets/logo-dark.png" alt="Honey Star" width="900" height="237">
+        </picture>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="index.html#services">What we do</a>
+        <a class="nav-link" href="index.html#sectors">Sectors</a>
+        <a class="nav-link" href="index.html#why">Why Honey Star</a>
+        <a class="nav-link" href="index.html#partners">Partners</a>
+        <a class="nav-link is-active" href="index.html#gallery" aria-current="true">Gallery</a>
+        <a class="btn btn-accent nav-cta" href="index.html#contact">Contact us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ ALBUM ============
+         This one page shows whichever album was selected in the gallery.
+         Its title and pictures come from js/albums.js.
+    -->
+    <section class="section" id="album">
+      <div class="container">
+        <a class="album-back" href="index.html#gallery">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 5-7 7 7 7"/></svg>
+          All albums
+        </a>
+
+        <div class="section-head">
+          <p class="eyebrow">Gallery</p>
+          <h1 id="album-title">Gallery album</h1>
+          <p id="album-description" hidden></p>
+          <p id="album-hint">Select any picture to view it full size.</p>
+        </div>
+
+        <ul class="gallery-grid" id="gallery-grid"></ul>
+        <noscript><p>Turn on JavaScript in your browser to view this album.</p></noscript>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <img src="assets/logo-white.png" alt="Honey Star" width="900" height="237" loading="lazy">
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="index.html#about">About</a>
+          <a href="index.html#services">What we do</a>
+          <a href="index.html#sectors">Sectors</a>
+          <a href="index.html#why">Why Honey Star</a>
+          <a href="index.html#partners">Partners</a>
+          <a href="index.html#gallery">Gallery</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+      <p class="footer-legal">© <span id="year">2026</span> Honey Star Resources Limited. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
+
+  <!-- Gallery full-screen viewer (filled in by js/script.js) -->
+  <dialog class="lightbox" id="lightbox" aria-label="Gallery viewer">
+    <div class="lightbox-bar">
+      <p class="lightbox-count" id="lightbox-count" aria-live="polite"></p>
+      <button class="lightbox-btn" id="lightbox-close" type="button" aria-label="Close viewer">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="lightbox-stage">
+      <button class="lightbox-btn lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous picture">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+      </button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="">
+      <button class="lightbox-btn lightbox-next" id="lightbox-next" type="button" aria-label="Next picture">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+      </button>
+    </div>
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </dialog>
+
+  <script src="js/albums.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
